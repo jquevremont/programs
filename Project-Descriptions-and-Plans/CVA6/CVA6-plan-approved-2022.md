@@ -5,7 +5,7 @@
 | PC gate: Project Concept             | Approved on 2020-09-28 as Preliminary Project Launch (PPL) |
 | PL gate: Project Launch              | Approved on 2021-01-25                                     |
 | PA gate: Plan Approved               | Presented on 2022-02-28 for **2022 workplan**, approved on 2022-03-28 |
-| PA gate: Plan Approved               | 2023 and beyond workplan in future PA gate                 |
+| PA gate: Plan Approved               | Presented on 2023-06-26 for **2023-2024 workplan**                 |
 
 Author: Jérôme Quévremont, Thales Research & Technology
 
@@ -36,56 +36,43 @@ engineers seeking to evaluate CVA6 and industrial domains that need to support t
 
 ### Summary of Timeline
 
-CVA6 is a long-run project, for which some participants are expecting grants to perform the work needed to reach TRL5. It is therefore difficult to plan the complete project.
+CVA6 is a long-run project, addressing several configurations of the core. It is therefore difficult to plan the complete project.
 
-Therefore, in order to keep the project under control, the project plan is defined for **2022 activity**. An update of the plan will be needed beginning of 2023, together with another PA gate.
+Therefore, we first got a project plan for **2022 activity**. Then it is updated with **2023-2024** activity (mostly aligned with the TRL5 verification of a first CV32A6 configuration). An update is expected for the upcoming verification of a CV64A6 configuration.
 
 ## OpenHW Members/Participants committed to participate in CORE-V CVA6 project
 
 - Thales group:
     - Thales Research & Technology (TRT)
-    - Thales DIS Design Services (INVIA)
-	- Thales India / Engineering Competence Center (ECC)
+    - Thales Secure Silicon (TSS, formerly known as INVIA)
+    - Thales India / Engineering Competence Center (ECC)
 - The University of Minho
+- Zero-Day Labs
 - ETH Zürich
 - U. Bologna (past contribution)
+- 10xEngineers
+- MU-Electronics
+- PlanV (expected)
 
 ## Project Leader(s)
 
 - Project Manager (PM) and Technical project leader (TPL): Jérôme Quévremont, TRT
-- Verification leader: Jean-Roch Coulon, INVIA
+- Verification leader and principal committer: Jean-Roch Coulon, INVIA
 - FPGA softcore leader: Sébastien Jacq, TRT
 
 ## Project Planning Documents
 
-The 2022 workplan, based on milestones for various contributions and contributors, is below.
+The 2022 and 2023-2024 workplans, are below.
 
-The progress towards the milestones will be tracked during progress meetings, usually every two weeks.
+The progress towards the milestones will be tracked during CVA6 meetings, usually once a month.
 
 ## Summary of requirements
 
 ### CVA6 features
 
-The CVA6 specification has been prepared for the PA gate.
-It is temporarily hosted in this [Google Docs file](https://docs.google.com/document/d/11rsoO5WKraMCraSpnsVqmt4hJaCcDG0zq7LTWdXVkf0).
-After approval by the TWG, it will be converted to AsciiDoc and managed in OpenHW GitHub.
+The CVA6 specification was prepared for the previous 2022-02-28 PA gate and approved by the Technical WG. It is now available in [ReadTheDocs](https://docs.openhwgroup.org/projects/cva6-user-manual/02_cva6_requirements/cva6_requirements_specification.html).
 
-As a summary, CVA6 contains:
-
-|                     | CV64A6                                | CV32A6                           |
-| :------------------ | :-----------------------------------: | :------------------------------: |
-| ISA                 | RV64IMA\[F\[D\]\]\[C\]_Zicsr_Zifencei | RV32IMA\[F\]\[C\]_Zicsr_Zifencei |
-| Privilege levels    | M/S/U\*                               | M/S/U\*                          |
-| Virtual memory      | \[Sv39\]                              | \[Sv32\]                         |
-
-\[\] denotes a configurable feature.
-
-\* In addition, CV64A6 will optionally support RISC-V Hypervisor extension.
-
-`FENCE.T` is supported and might become a standard RISC-V instruction in the future.
-
-The **CV-X-IF** interface will allow to extend CVA6 instruction set with an external co-processor.
-It will either support proprietary extensions or RISC-V extensions that are not natively supported by CVA6.
+To avoid duplications and risks of inconsistencies, it is not copied here.
 
 ### License scheme
 
@@ -108,6 +95,11 @@ In addition, this sustainable open-source solution, lowers barriers for newcomer
 To foster cooperation and efficiency within OpenHW Group, CVA6 will use and contribute to **core-v-verif**. Spike will be used as a reference ISS and Imperas OVPSim is considered too.
 
 Gateways between OpenHW core-v-verif repositories and Thales internal environment (GitLab, CI...) will be set up.
+
+Early 2023, the verification has been split into several steps:
+- **Step 1**: Verify the features available to the programmer (RISC-V instructions, CSRs...) of CV32A60X, a "small" configuration of CVA6.
+- **Step 2**: Verify the CV32A60X microarchitecture, i.e. the non-ISA performance features (e.g. branch prediction, caches...)
+- **Step 3**: Verify a CV64A6 "large" configuration.
 
 ## Future enhancements (off project):
 
@@ -141,12 +133,12 @@ On the tool side, CHIPS Alliance has plans to make their tools open-source
 _This section was initially titled "Related efforts to be described"._
 
 To differentiate from the competition, marketing can stress:
-- Source code written in SystemVerilog, a widely accepted language;
-- Open-source availability of the core;
+- Source code written in **SystemVerilog**, a widely accepted language;
+- **Open-source** availability of the core;
 - Open-source availability of verification artefacts, which is a great step towards certification for security- and safety-critical applications;
-- The availability of a family of technology-independent cores optimized for ASIC and FPGA targets;
-- The ability to extend the instruction set thanks to the CV-X-IF interface;
-- The SW ecosystem running on CVA6, with FreeRTOS and Linux already demonstrated;
+- The availability of a family of **technology-independent cores optimized for ASIC and FPGA targets**;
+- The ability to **extend the instruction** set thanks to the CV-X-IF interface;
+- The **SW ecosystem** running on CVA6, with FreeRTOS and Linux already demonstrated;
 - The ability to scale to SMP multi/many-core CPUs thanks to the OpenPiton framework;
 - The permissive licence scheme that allows the integration in open-source or closed-source projects or the addition of a "secret sauce";
 - The low exposition to export control
@@ -158,23 +150,21 @@ The project relies on:
 - Related OpenHW projects (joint with other cores): LLVM, FreeRTOS, core-v-verif, CV-X-IF specification
 - Open-source software: GCC, GDB, LLVM, Linux (Yocto, BuildRoot), OpenSBI, UBoot, BBL...
 - Open-source verification: Google Riscv-dv, Spike, RISC-V compatibility tests
-- Open-source hardware: fpnew (ETH Zürich, soon migrated to OpenHW)
+- Open-source hardware: fpnew (ETH Zürich), first verified in CV32E40Pv2
 - Eclipse Foundation, GitHub
 - Digilent Genesys 2 board
 - JADE Design Automation's Register Manager
-- Simulators: Verilator (open-source), Siemens Questa, Synopsys VCS, Imperas OVPSim
+- Simulators: Verilator (open-source), Siemens Questa, Synopsys VCS
 - Synthesis: Vivado (Xilinx), Synopsys Design Compiler (ASIC)
 
 CVA6 can be integrated in the OpenPiton framework to build an SMP multi/many-core CPU.
-
-The RV32F DIV and SQRT simulation sequences will be developed as early as possible so that they can be reused by CV32E40Pv2 project.
 
 ## List of project outputs
 
 ### Documentation:
 
 The document structure has been defined at the PL gate:
-- Specification
+- Requirement specification
     - Identifies features agreed upon
     - “What” defined as requirements with identifiers
     - Some sections are short (references to RISC-V ISA, AXI specs…)
@@ -183,8 +173,8 @@ The document structure has been defined at the PL gate:
     - For CVA6 integrators and users: HW, SW, ASIC, FPGA… viewpoints
 - Design document
     - Explains the “How”: design choices…
-    - Not prescriptive, written during or after the design.
-	- Useful for next projects.
+    - Not prescriptive, written during or after the design
+	- Useful for next projects and certain certification schemes
 - Verification Environment Specification
     - User manual for the verification environment testbenches, testcases, verification components, etc.
     - Description of the testbench structure and theory of operation
@@ -193,6 +183,7 @@ The document structure has been defined at the PL gate:
     - Feature-by-feature listing of the Device Under Test
         - and a description of how it will be verified
         - and how we know when it is verified (coverage).
+    -   Prepared with the [VPTOOL](https://github.com/openhwgroup/core-v-verif/tree/master/tools/vptool) utility
 
 The specification and users' guide are inputs for design verification plans.
 
@@ -229,37 +220,41 @@ LLVM and FreeRTOS are products of related OpenHW projects.
 
 ### OpenHW engineering staff resource plan: requirement and availability
 
-The OpenHW staff is expected to support the task groups on these missions:
-- Mike Thompson on verification
-- Florian Zaruba on software and ARIANE knowledge transfer
-- Davide Schiavone on core design
-- Duncan Bees on project management
+The OpenHW staff are expected to support the project on their scope:
+- Mike Thompson, Director of Engineering, Verification Task Group
+- Florian Zaruba, Director of Engineering, HW & SW Task Groups
+- Davide Schiavone, Director of Engineering, Cores Task Group
+- Duncan Bees, Director, Technical Programs
+
+Florian's experience as the creator of ARIANE is also expected.
 
 ### Engineering resource supplied by members - requirement and availability
 
-The 2022 workplan below has been prepared according to available members' resources.
-
-Grants are expected to fuel 2023 workplan with more resources, especially on verification activities.
+The 2022 and 2023-2024 workplans below have been prepared according to available members' resources.
 
 ### Marketing resource - requirement and availability
 
 The project needs support from:
 
-- Rick O'Connor, OpenHW CEO
+- Rick O'Connor, OpenHW CEO, and his successor
 - Michelle Clancy, Director of Marketing
 
 to promote CVA6 and attract new participants to the project.
 
 On the members' side, promotion activities (presentations, demos...) will mainly be addressed by the engineering team.
 
-Results obtained by the engineering team in 2021 (CV32A6 release, FreeRTOS support, Linux support...) can be used
-in 2022 to promote the CVA6 project.
+Results obtained by the engineering team in 2021 (CV32A6 release, FreeRTOS support, Linux support...) and in 2022
+(Yocto support, CV-X-IF addition, FPGA optimizations...) can be used to promote the CVA6 project.
 
 ### Funding for project aspects - requirement and availability
 
 Some marketing activities (OpenHW TV production...) might need OpenHW funding.
 
 Participating members provide the necessary tools to their teams.
+
+The activities of some participants are supported by the **FRACTAL** and **TRISTAN** projects, which have received funding from the
+Key Digital Technologies Joint Undertaking (KDT JU) under grant agreements 877056 and 101095947. The JU receives support from
+the European Union’s Horizon Europe research and innovation program.
 
 ## Architecture and/or context diagrams
 
@@ -283,9 +278,9 @@ The project artefacts and outputs will be licensed under Apache 2.0 or for SW co
 
 Third-party open-source contributions will generally retain their own licence model.
 
-"Viral" licences, such as GPL, will be avoided.
+Linux and Yocto activities will retain the "upstream" licenses.
 
-OVPSim licences will be provided by Imperas.
+"Viral" licences, such as GPL, will be avoided.
 
 ## Description of initial code contribution, if required
 
@@ -307,7 +302,9 @@ https://github.com/openhwgroup/cva6: the core master directory<br>
 https://github.com/openhwgroup/core-v-verif: the verification home<br>
 /cva6: specific files for the core
 	
-https://github.com/openhwgroup/cva6-sdk: RISC-V tools and Linux
+https://github.com/openhwgroup/cva6-sdk: RISC-V tools and BuiltRoot Linux
+
+https://github.com/openhwgroup/meta-cva6-yocto: Yocto Linux
 
 https://github.com/openhwgroup/core-v-docs/tree/master/program/Project%20Descriptions%20and%20Plans/CVA6: project gates.
 
@@ -362,27 +359,26 @@ A waterfall method is used.
 
 ### Project tracking and meetings
 
-The progress towards 2022 milestones will be tracked in progress meetings. Slides will be updated during the meeting and posted on CVA6 Mattermost channel.
+The progress will be tracked in CVA6 meetings.
 
-The various activities (core, verification, software) are led in a unified project way and reported to the relevant task groups.
+The various activities (core, verification, software) are reported to the relevant task groups.
 
-The CVA6 meets every week, alternating progress and technical meetings.
+The CVA6 usually meets every week, the agenda contains progress and technical topics.
 The meetings are well suited for East Coast, Europe and India timezones. Once a month, the meeting starts later to accomodate participants from the West Coast.
+
+In addition, the contributors to verification activities have a dedicated weekly meeting.
 
 ### Oustanding topics
 
-These topics will be defined in CVA6 meetings at the relevant time:
-- Overall approach for Github issues and label
-
-No release plan is defined in 2022 as this PA gate is interim.
-No Project Freeze (PF) checklist is planned in 2022.
+The release plan and Project Freeze (PF) checklist for CV32A60X need to be defined before the end of step 2. This release is known under v5.0.0 number.
 
 ### Risk register
 
-|                           | Likelihood | Impact | Avoidance&nbsp;/ Mitigation                                                   |
-| ------------------------- | :--------: | :----: | ----------------------------------------------------------------------------- |
-| Not enough resources      | High       | Major  | The current team is expecting grants ; more participants welcome              |
-| Insufficient coordination | Mid        | Mid    | Weekly meetings                                                               |
-| Conflicting contributions | Mid        | Major  | Weekly meetings                                                               |
-| Export control            | Low        | Major  | Apply OpenHW membership agreement (carefully review non-OpenHW contributions) |
-| Lack of market appeal     | Mid        | Major  | Increase CVA6 promotion based on intermediate results                         |
+|                             | Likelihood | Impact | Avoidance&nbsp;/ Mitigation                                                      |
+| --------------------------- | :--------: | :----: | ---------------------------------------------------------------------------------|
+| Not enough resources        | Mid        | Major  | Some members have received grants. Need to recruit more members on verification. |
+| Insufficient coordination   | Mid        | Mid    | Weekly meetings                                                                  |
+| Conflicting contributions   | Mid        | Major  | Weekly meetings                                                                  |
+| Hard to merge contributions | High       | Mid    | Updated CONTRIBUTING.md                                                          |
+| Export control              | Low        | Major  | Apply OpenHW membership agreement (carefully review non-OpenHW contributions)    |
+| Lack of market appeal       | Mid        | Major  | Marketing/dissemination + CV32A60X is expected to be fully verified in 2024.     |
