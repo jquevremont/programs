@@ -52,6 +52,7 @@ Therefore, we first got a project plan for **2022 activity**. Then it is updated
 - U. Bologna (past contribution)
 - 10xEngineers
 - MU-Electronics
+- CEA
 - PlanV (expected)
 
 ## Project Leader(s)
@@ -356,6 +357,39 @@ A waterfall method is used.
 | Related project | FreeRTOS developments - maturing the boot sequence, driver eco-system for peripherals, synchronize with SW TG and MCU FreeRTOS | 2022-10-31    | ECC         |
 | Off project     | Keystone FreeRTOS integration on RISC-V hardware (IBEX, CVA6 etc.), synchronize with SW TG and MCU FreeRTOS                    | 2022-12-31    | ECC         |
 | Off project     | TensorflowLite deployment on Linux CVA6                                                                                        | 2022-12-31    | ECC         |
+
+### 2023-2024 workplan
+
+A waterfall method is used.
+
+| Related TG      | Milestone                                                                                                                      | Target        | Contributor                                     |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------ | ------------- | ----------------------------------------------- |
+| Core            | User guide: sections needed for step 1 verification (instructions, CSR...)                                                     | 2023-Q3       | All, led by Jérôme                              |
+| Core            | User guide: sections needed for step 2 verification (microarchitecture when relevant in the users' guide...)                   | 2024-Q3       | All, led by Jérôme                              |
+| Core            | Design document: description of the microarchitecture needed for step 2 verification                                           | 2024-Q3       | All, led by TSS                                 |
+| Core            | Interface with vector coprocessor merged in master branch                                                                      | 2023-Q2       | ETH                                             |
+| Core            | Hypervisor support merged in master branch                                                                                     | 2023-Q2       | Zero-Day Labs (based on prior work at U. Minho) |
+| Core            | Evolutions to interface with high performance data cache merged in master branch                                               | 2023-Q2       | CEA                                             |
+| Core            | To be confirmed: Evolutions to support new coherent cache systems for 2 to 4 cores                                             | TBC           | PlanV                                           |
+| Core            | Zicond support integrated in CVA6 RTL                                                                                          | 2023-Q2       | 10xEngineers                                    |
+| Core            | Performance counters: bridge gaps vs. requirements                                                                             | 2023-Q2       | ECC                                             |
+| Core            | Instruction scratchpad integrated in CVA6                                                                                      | July 2023     | ECC                                             |
+| Core            | Data scratchpad integrated in CVA6: design reviews                                                                             | October 2023  | ECC                                             |
+| Core            | Data scratchpad integrated in CVA6: implementation                                                                             | February 2024 | ECC                                             |
+| Core            | Configurable reset                                                                                                             | December 2023 | ECC                                             |
+| Core            | Note to requirement ISA-110                                                                                                    | December 2023 | ECC                                             |
+| Core            | FPGA optimizations: focus on frequency increase                                                                                | 2023-Q4       | TRT                                             |
+| Core            | Corrections related to verification activities                                                                                 | Continuous    | TSS and MU-Electronics                          |
+| Verification    | Verification step 1: DVPlans                                                                                                   | 2023-Q3       | TSS (lead), 10xEngineers, MU-Electronics, ECC   |
+| Verification    | Verification step 1: CV32A60X is verified at programmer's view level                                                           | 2023-Q3       | TSS (lead), 10xEngineers, MU-Electronics, ECC   |
+| Verification    | Verification step 2: DVPlans                                                                                                   | 2024-Q3       | TSS (lead), 10xEngineers, MU-Electronics, ECC   |
+| Verification    | Verification step 2: CV32A60X is fully verified (programmer's view level + microarchitecture)                                  | 2024-Q4       | TSS (lead), 10xEngineers, MU-Electronics, ECC   |
+| Verification    | CV32A60X released, Project Freeze (PF) checklist                                                                               | 2024-Q4       | TSS (lead) and verification team                |
+| Software        | Linux Yocto (with BuildRoot and OpenSBI) available in an OpenHW repository                                                     | 2023-Q2       | TRT                                             |
+|                 | _For information: FreeRTOS project related to CVA6_                                                                            |               |                                                 |
+| Related project | Validate PMP features on CVA6 with applications on FreeRTOS                                                                    | November 2023 | ECC                                             |
+| Related project | Integrate updated release of FreeRTOS kernel into CVA6 FreeRTOS with device drivers implemented, upstream to main repo         | TBD           | ECC                                             |
+| Related project | Port the new FreeRTOS on CVA6-apu                                                                                              | TBD           | ECC                                             |
 
 ### Project tracking and meetings
 
