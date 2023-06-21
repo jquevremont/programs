@@ -58,7 +58,7 @@ Therefore, we first got a project plan for **2022 activity**. Then it is updated
 ## Project Leader(s)
 
 - Project Manager (PM) and Technical project leader (TPL): Jérôme Quévremont, TRT
-- Verification leader and principal committer: Jean-Roch Coulon, INVIA
+- Verification leader and main committer: Jean-Roch Coulon, INVIA
 - FPGA softcore leader: Sébastien Jacq, TRT
 
 ## Project Planning Documents
@@ -98,9 +98,9 @@ To foster cooperation and efficiency within OpenHW Group, CVA6 will use and cont
 Gateways between OpenHW core-v-verif repositories and Thales internal environment (GitLab, CI...) will be set up.
 
 Early 2023, the verification has been split into several steps:
-- **Step 1**: Verify the features available to the programmer (RISC-V instructions, CSRs...) of CV32A60X, a "small" configuration of CVA6.
-- **Step 2**: Verify the CV32A60X microarchitecture, i.e. the non-ISA performance features (e.g. branch prediction, caches...)
-- **Step 3**: Verify a CV64A6 "large" configuration.
+- **Step 1**: Verify the features available to the programmer (RISC-V instructions, CSRs...) of **CV32A60X**, a "small" configuration of CVA6.
+- **Step 2**: Verify the **CV32A60X** microarchitecture, i.e. the non-ISA performance features (e.g. branch prediction, caches...)
+- **Step 3**: Verify a CV64A6__ "large" configuration.
 
 ## Future enhancements (off project):
 
@@ -381,7 +381,7 @@ A waterfall method is used.
 | Core            | FPGA optimizations: focus on frequency increase                                                                                | 2023-Q4       | TRT                                             |
 | Core            | Corrections related to verification activities                                                                                 | Continuous    | TSS and MU-Electronics                          |
 | Verification    | Verification step 1: DVPlans                                                                                                   | 2023-Q3       | TSS (lead), 10xEngineers, MU-Electronics, ECC   |
-| Verification    | Verification step 1: CV32A60X is verified at programmer's view level                                                           | 2023-Q3       | TSS (lead), 10xEngineers, MU-Electronics, ECC   |
+| Verification    | Verification step 1: CV32A60X is verified at programmer's view level                                                           | 2023-Q4       | TSS (lead), 10xEngineers, MU-Electronics, ECC   |
 | Verification    | Verification step 2: DVPlans                                                                                                   | 2024-Q3       | TSS (lead), 10xEngineers, MU-Electronics, ECC   |
 | Verification    | Verification step 2: CV32A60X is fully verified (programmer's view level + microarchitecture)                                  | 2024-Q4       | TSS (lead), 10xEngineers, MU-Electronics, ECC   |
 | Verification    | CV32A60X released, Project Freeze (PF) checklist                                                                               | 2024-Q4       | TSS (lead) and verification team                |
