@@ -438,8 +438,10 @@ These activities are hosted in the main project. They can also relate to the int
 | Verification    | Maintain tandem mode                                                                                                           | Continuous    | OpenHW staff                                  |
 | Verification    | Add Mentor Questa support to the verification flow                                                                             | 2024          | OpenHW staff                                  |
 | Verification    | Add Cadence Xcelium support to the verification flow                                                                           | 2024          | TRISTAN partner                               |
-| Verification    | Edit DVplans                                                                                                                   | 2024          | OpenHW members                               |
-| Verification    | Develop UVM environment (covergroups, random test generation, UVM agents,...)                                                    | 2024          | OpenHW members                               |
+| Verification    | Edit DVplans                                                                                                                   | 2024          | OpenHW members                                |
+| Verification    | Develop UVM environment (covergroups, random test generation, UVM agents,...)                                                  | 2024          | OpenHW members                                |
+| Verification    | MMU architectural tests and UVM agent development                 |                                  
+                      | 2024          | 10xEngineers                                  |
 
 ### Project tracking and meetings
 
